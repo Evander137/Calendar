@@ -14,6 +14,7 @@ namespace Calendar
     public partial class Form1 : Form
     {
         int month, year;
+        public static int MONTH, YEAR;
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +32,9 @@ namespace Calendar
         {
             String monthname = DateTimeFormatInfo.CurrentInfo.GetMonthName(month);
             lbDate.Text = year + " " + monthname;
+
+            MONTH = month;
+            YEAR = year;
 
             DateTime startOfTheMonth = new DateTime(year, month, 1);
             int days = DateTime.DaysInMonth(year, month);
